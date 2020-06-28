@@ -1,4 +1,4 @@
-ataParallel(
+DataParallel(
   (module): East(
     (mobilenet): MobileNetV2(
       (features): Sequential(
