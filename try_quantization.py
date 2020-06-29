@@ -124,7 +124,7 @@ def main():
     print()
     example = torch.rand(1, 3, 224, 224)
     
-    traced_script_module = torch.jit.trace(model, example)
+    #traced_script_module = torch.jit.trace(model, example)
     uninplace(model)
     l1=[['module.conv1','module.bn1','module.relu1'],['module.conv2','module.bn2','module.relu2'],['module.conv3','module.bn3','module.relu3'],['module.conv4','module.bn4','module.relu4'],['module.conv5','module.bn5','module.relu5'],['module.conv6','module.bn6','module.relu6'],['module.conv7','module.bn7','module.relu7']]
     #s4
@@ -154,18 +154,33 @@ def main():
     print()
     #print(fused_model)
     
-    fused_model.qconfig = torch.quantization.QConfig(activation=torch.quantization.default_histogram_observer,weight=torch.quantization.default_per_channel_weight_observer)
-
+    #fused_model.qconfig = torch.quantization.QConfig(activation=torch.quantization.default_histogram_observer,weight=torch.quantization.default_per_channel_weight_observer)
+    fused_model.qconfig = torch.quantization.default_qconfig
     torch.quantization.prepare(fused_model, inplace=True)
-    print('Quantized model Size:')
+    
+    
+    from data_loader import custom_dset
+    from torchvision import transforms
+    from torch.utils.data import DataLoader
+    trainset = custom_dset(transform=transforms.ToTensor())
+    train_loader = DataLoader(trainset, batch_size=cfg.train_batch_size_per_gpu * cfg.gpu,shuffle=True, num_workers=0)
+    for i, (img, img_path, score_map, geo_map, training_mask) in enumerate(train_loader):
+        f_score, f_geometry = fused_model(img)
+        
     quantized = torch.quantization.convert(fused_model, inplace=False)
+    print('Quantized model Size:')
     print_size_of_model(quantized)
     
     print('Done')
     
     #print(quantized)
     #q_example = torch.quantize_per_tensor(example, scale=1e-3, zero_point=128,dtype=torch.quint8)
-    #predict(model, epoch)
+    #predict(model, epoch)   
+    #import sys
+    #sys.stdout = open("quantized_model.txt", "w")
+    #print(quantized)
+    #sys.stdout.close()
+    
 
 if __name__ == "__main__":
     main()
