@@ -1,0 +1,1511 @@
+DataParallel(
+  (module): East(
+    (mobilenet): MobileNetV2(
+      (features): Sequential(
+        (0): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+        )
+        (1): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=32, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBn2d(
+              (0): Conv2d(
+                32, 16, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+          )
+        )
+        (2): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                16, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                96, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=96, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                96, 24, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (3): InvertedResidual(
+          (conv): Sequential(
+            (0): QuantizedConv2d(24, 144, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0, bias=False)
+            (1): QuantizedBatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): QuantizedReLU()
+            (3): QuantizedConv2d(144, 144, kernel_size=(3, 3), stride=(1, 1), scale=1.0, zero_point=0, padding=(1, 1), groups=144, bias=False)
+            (4): QuantizedBatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): QuantizedReLU()
+            (6): QuantizedConv2d(144, 24, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0, bias=False)
+            (7): QuantizedBatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (4): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                24, 144, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                144, 144, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=144, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                144, 32, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (5): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (6): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (7): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                192, 192, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=192, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                192, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (8): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (9): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (10): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (11): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (12): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (13): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (14): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                576, 160, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (15): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+        (16): InvertedResidual(
+          (conv): Sequential(
+            (0): ConvBnReLU2d(
+              (0): Conv2d(
+                160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (1): Identity()
+            (2): Identity()
+            (3): ConvBnReLU2d(
+              (0): Conv2d(
+                960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+              (2): ReLU(
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (4): Identity()
+            (5): Identity()
+            (6): ConvBn2d(
+              (0): Conv2d(
+                960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False
+                (activation_post_process): HistogramObserver()
+              )
+              (1): BatchNorm2d(
+                160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+                (activation_post_process): HistogramObserver()
+              )
+            )
+            (7): Identity()
+          )
+        )
+      )
+    )
+    (quant): Quantize(scale=tensor([1.]), zero_point=tensor([0]), dtype=torch.quint8)
+    (dequant): DeQuantize()
+    (skip_add): QFunctional(scale=1.0, zero_point=0)
+    (s1): Sequential(
+      (0): Sequential(
+        (0): ConvBnReLU2d(
+          (0): Conv2d(
+            3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False
+            (activation_post_process): HistogramObserver()
+          )
+          (1): BatchNorm2d(
+            32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+            (activation_post_process): HistogramObserver()
+          )
+          (2): ReLU(
+            (activation_post_process): HistogramObserver()
+          )
+        )
+        (1): Identity()
+        (2): Identity()
+      )
+      (1): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=32, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBn2d(
+            (0): Conv2d(
+              32, 16, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+        )
+      )
+      (2): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              16, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              96, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=96, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              96, 24, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+      (3): InvertedResidual(
+        (conv): Sequential(
+          (0): QuantizedConv2d(24, 144, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0, bias=False)
+          (1): QuantizedBatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): QuantizedReLU()
+          (3): QuantizedConv2d(144, 144, kernel_size=(3, 3), stride=(1, 1), scale=1.0, zero_point=0, padding=(1, 1), groups=144, bias=False)
+          (4): QuantizedBatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): QuantizedReLU()
+          (6): QuantizedConv2d(144, 24, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0, bias=False)
+          (7): QuantizedBatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (s2): Sequential(
+      (0): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              24, 144, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              144, 144, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=144, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              144, 32, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+      (1): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+      (2): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+    )
+    (s3): Sequential(
+      (0): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              192, 192, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=192, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              192, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+      (1): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+      (2): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+      (3): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+      (4): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+      (5): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+      (6): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+    )
+    (s4): Sequential(
+      (0): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              576, 160, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+      (1): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+      (2): InvertedResidual(
+        (conv): Sequential(
+          (0): ConvBnReLU2d(
+            (0): Conv2d(
+              160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (1): Identity()
+          (2): Identity()
+          (3): ConvBnReLU2d(
+            (0): Conv2d(
+              960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+            (2): ReLU(
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (4): Identity()
+          (5): Identity()
+          (6): ConvBn2d(
+            (0): Conv2d(
+              960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False
+              (activation_post_process): HistogramObserver()
+            )
+            (1): BatchNorm2d(
+              160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+              (activation_post_process): HistogramObserver()
+            )
+          )
+          (7): Identity()
+        )
+      )
+    )
+    (conv1): ConvBnReLU2d(
+      (0): Conv2d(
+        256, 128, kernel_size=(1, 1), stride=(1, 1)
+        (activation_post_process): HistogramObserver()
+      )
+      (1): BatchNorm2d(
+        128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+        (activation_post_process): HistogramObserver()
+      )
+      (2): ReLU(
+        (activation_post_process): HistogramObserver()
+      )
+    )
+    (bn1): Identity()
+    (relu1): Identity()
+    (conv2): ConvBnReLU2d(
+      (0): Conv2d(
+        128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
+        (activation_post_process): HistogramObserver()
+      )
+      (1): BatchNorm2d(
+        128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+        (activation_post_process): HistogramObserver()
+      )
+      (2): ReLU(
+        (activation_post_process): HistogramObserver()
+      )
+    )
+    (bn2): Identity()
+    (relu2): Identity()
+    (conv3): ConvBnReLU2d(
+      (0): Conv2d(
+        160, 64, kernel_size=(1, 1), stride=(1, 1)
+        (activation_post_process): HistogramObserver()
+      )
+      (1): BatchNorm2d(
+        64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+        (activation_post_process): HistogramObserver()
+      )
+      (2): ReLU(
+        (activation_post_process): HistogramObserver()
+      )
+    )
+    (bn3): Identity()
+    (relu3): Identity()
+    (conv4): ConvBnReLU2d(
+      (0): Conv2d(
+        64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
+        (activation_post_process): HistogramObserver()
+      )
+      (1): BatchNorm2d(
+        64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+        (activation_post_process): HistogramObserver()
+      )
+      (2): ReLU(
+        (activation_post_process): HistogramObserver()
+      )
+    )
+    (bn4): Identity()
+    (relu4): Identity()
+    (conv5): ConvBnReLU2d(
+      (0): Conv2d(
+        88, 64, kernel_size=(1, 1), stride=(1, 1)
+        (activation_post_process): HistogramObserver()
+      )
+      (1): BatchNorm2d(
+        64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+        (activation_post_process): HistogramObserver()
+      )
+      (2): ReLU(
+        (activation_post_process): HistogramObserver()
+      )
+    )
+    (bn5): Identity()
+    (relu5): Identity()
+    (conv6): ConvBnReLU2d(
+      (0): Conv2d(
+        64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
+        (activation_post_process): HistogramObserver()
+      )
+      (1): BatchNorm2d(
+        32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+        (activation_post_process): HistogramObserver()
+      )
+      (2): ReLU(
+        (activation_post_process): HistogramObserver()
+      )
+    )
+    (bn6): Identity()
+    (relu6): Identity()
+    (conv7): ConvBnReLU2d(
+      (0): Conv2d(
+        32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
+        (activation_post_process): HistogramObserver()
+      )
+      (1): BatchNorm2d(
+        32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
+        (activation_post_process): HistogramObserver()
+      )
+      (2): ReLU(
+        (activation_post_process): HistogramObserver()
+      )
+    )
+    (bn7): Identity()
+    (relu7): Identity()
+    (conv8): QuantizedConv2d(32, 1, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0)
+    (sigmoid1): Sigmoid()
+    (conv9): QuantizedConv2d(32, 4, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0)
+    (sigmoid2): Sigmoid()
+    (conv10): QuantizedConv2d(32, 1, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0)
+    (sigmoid3): Sigmoid()
+    (unpool1): Upsample(scale_factor=2.0, mode=bilinear)
+    (unpool2): Upsample(scale_factor=2.0, mode=bilinear)
+    (unpool3): Upsample(scale_factor=2.0, mode=bilinear)
+  )
+)
