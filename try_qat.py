@@ -215,6 +215,7 @@ def main():
     print('QAT model Size:')
     print_size_of_model(quantized_model)
     print('Done')
+    print(quantized)
     
     #print(quantized)
     #q_example = torch.quantize_per_tensor(example, scale=1e-3, zero_point=128,dtype=torch.quint8)
