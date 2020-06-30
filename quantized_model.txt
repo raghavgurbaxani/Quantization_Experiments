@@ -1,3 +1,4 @@
+Size (MB): 6.712286
 DataParallel(
   (module): East(
     (mobilenet): MobileNetV2(
@@ -6,14 +7,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-694.3411254882812, max_val=765.30712890625)
             )
             (1): BatchNorm2d(
               32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-4.2157487869262695, max_val=4.755300998687744)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=4.755300998687744)
             )
           )
           (1): Identity()
@@ -24,14 +25,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=32, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-4.808586597442627, max_val=4.792212009429932)
               )
               (1): BatchNorm2d(
                 32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-14.7689208984375, max_val=20.839181900024414)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=20.839181900024414)
               )
             )
             (1): Identity()
@@ -39,11 +40,11 @@ DataParallel(
             (3): ConvBn2d(
               (0): Conv2d(
                 32, 16, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-19.256649017333984, max_val=21.892061233520508)
               )
               (1): BatchNorm2d(
                 16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-7.484631538391113, max_val=8.60972785949707)
               )
             )
             (4): Identity()
@@ -54,14 +55,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 16, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-74.95523834228516, max_val=4.2478227615356445)
               )
               (1): BatchNorm2d(
                 96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-25.349746704101562, max_val=18.846330642700195)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=18.846330642700195)
               )
             )
             (1): Identity()
@@ -69,14 +70,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 96, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=96, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-6.784666538238525, max_val=7.328728199005127)
               )
               (1): BatchNorm2d(
                 96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-10.428705215454102, max_val=9.83703899383545)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=9.83703899383545)
               )
             )
             (4): Identity()
@@ -84,11 +85,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 96, 24, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-6.78213357925415, max_val=5.640778541564941)
               )
               (1): BatchNorm2d(
                 24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-8.99451732635498, max_val=8.044456481933594)
               )
             )
             (7): Identity()
@@ -96,13 +97,13 @@ DataParallel(
         )
         (3): InvertedResidual(
           (conv): Sequential(
-            (0): QuantizedConv2d(24, 144, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0, bias=False)
+            (0): QuantizedConv2d(24, 144, kernel_size=(1, 1), stride=(1, 1), scale=0.11670423299074173, zero_point=69, bias=False)
             (1): QuantizedBatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
             (2): QuantizedReLU()
-            (3): QuantizedConv2d(144, 144, kernel_size=(3, 3), stride=(1, 1), scale=1.0, zero_point=0, padding=(1, 1), groups=144, bias=False)
+            (3): QuantizedConv2d(144, 144, kernel_size=(3, 3), stride=(1, 1), scale=0.024629225954413414, zero_point=72, padding=(1, 1), groups=144, bias=False)
             (4): QuantizedBatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
             (5): QuantizedReLU()
-            (6): QuantizedConv2d(144, 24, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0, bias=False)
+            (6): QuantizedConv2d(144, 24, kernel_size=(1, 1), stride=(1, 1), scale=0.06841567903757095, zero_point=67, bias=False)
             (7): QuantizedBatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
           )
         )
@@ -111,14 +112,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 24, 144, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-12.219780921936035, max_val=10.592093467712402)
               )
               (1): BatchNorm2d(
                 144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-5.569557189941406, max_val=5.011620998382568)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=5.011620998382568)
               )
             )
             (1): Identity()
@@ -126,14 +127,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 144, 144, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=144, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-2.3096377849578857, max_val=2.653795003890991)
               )
               (1): BatchNorm2d(
                 144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-6.5812273025512695, max_val=5.349667072296143)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=5.349667072296143)
               )
             )
             (4): Identity()
@@ -141,11 +142,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 144, 32, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-5.146231174468994, max_val=5.3432936668396)
               )
               (1): BatchNorm2d(
                 32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-5.073215961456299, max_val=5.208954811096191)
               )
             )
             (7): Identity()
@@ -156,14 +157,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.9989371299743652, max_val=3.9233131408691406)
               )
               (1): BatchNorm2d(
                 192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.7510486841201782, max_val=1.9535523653030396)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=1.9535523653030396)
               )
             )
             (1): Identity()
@@ -171,14 +172,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-0.7253670692443848, max_val=0.8016570806503296)
               )
               (1): BatchNorm2d(
                 192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.5955469608306885, max_val=2.77970027923584)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.77970027923584)
               )
             )
             (4): Identity()
@@ -186,11 +187,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-2.0767107009887695, max_val=2.3796112537384033)
               )
               (1): BatchNorm2d(
                 32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.9818387031555176, max_val=4.432605743408203)
               )
             )
             (7): Identity()
@@ -201,14 +202,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-4.574678421020508, max_val=5.0914483070373535)
               )
               (1): BatchNorm2d(
                 192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.8655264377593994, max_val=2.2238054275512695)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.2238054275512695)
               )
             )
             (1): Identity()
@@ -216,14 +217,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-0.6592678427696228, max_val=0.647018313407898)
               )
               (1): BatchNorm2d(
                 192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.4636456966400146, max_val=2.844683885574341)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.844683885574341)
               )
             )
             (4): Identity()
@@ -231,11 +232,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.620261788368225, max_val=1.521719217300415)
               )
               (1): BatchNorm2d(
                 32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-4.609888553619385, max_val=4.022383213043213)
               )
             )
             (7): Identity()
@@ -246,14 +247,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-7.502275466918945, max_val=7.96036958694458)
               )
               (1): BatchNorm2d(
                 192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.7448551654815674, max_val=3.6855552196502686)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=3.6855552196502686)
               )
             )
             (1): Identity()
@@ -261,14 +262,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 192, 192, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=192, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.3645087480545044, max_val=1.879869818687439)
               )
               (1): BatchNorm2d(
                 192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-2.908940553665161, max_val=4.036485195159912)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=4.036485195159912)
               )
             )
             (4): Identity()
@@ -276,11 +277,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 192, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-4.1309051513671875, max_val=3.705691337585449)
               )
               (1): BatchNorm2d(
                 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-4.047660827636719, max_val=5.508955955505371)
               )
             )
             (7): Identity()
@@ -291,14 +292,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-4.131062984466553, max_val=3.884453773498535)
               )
               (1): BatchNorm2d(
                 384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.827758550643921, max_val=1.8478769063949585)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=1.8478769063949585)
               )
             )
             (1): Identity()
@@ -306,14 +307,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-0.6122941374778748, max_val=0.45570996403694153)
               )
               (1): BatchNorm2d(
                 384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.113598346710205, max_val=2.2739017009735107)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.2739017009735107)
               )
             )
             (4): Identity()
@@ -321,11 +322,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.8687331676483154, max_val=1.4402614831924438)
               )
               (1): BatchNorm2d(
                 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.3221166133880615, max_val=2.748002052307129)
               )
             )
             (7): Identity()
@@ -336,14 +337,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.5098676681518555, max_val=2.741792678833008)
               )
               (1): BatchNorm2d(
                 384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.512744665145874, max_val=1.2992780208587646)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=1.2992780208587646)
               )
             )
             (1): Identity()
@@ -351,14 +352,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-0.3858180344104767, max_val=0.3598119616508484)
               )
               (1): BatchNorm2d(
                 384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-2.3812263011932373, max_val=2.1794652938842773)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.1794652938842773)
               )
             )
             (4): Identity()
@@ -366,11 +367,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-0.9137439727783203, max_val=1.0352885723114014)
               )
               (1): BatchNorm2d(
                 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.046076774597168, max_val=2.9412548542022705)
               )
             )
             (7): Identity()
@@ -381,14 +382,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.6375274658203125, max_val=4.371129035949707)
               )
               (1): BatchNorm2d(
                 384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.5107558965682983, max_val=1.7121473550796509)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=1.7121473550796509)
               )
             )
             (1): Identity()
@@ -396,14 +397,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-0.687937319278717, max_val=0.6003643274307251)
               )
               (1): BatchNorm2d(
                 384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.2446489334106445, max_val=2.6299076080322266)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.6299076080322266)
               )
             )
             (4): Identity()
@@ -411,11 +412,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.3070003986358643, max_val=1.119505524635315)
               )
               (1): BatchNorm2d(
                 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-2.841456413269043, max_val=3.468533992767334)
               )
             )
             (7): Identity()
@@ -426,14 +427,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-4.216851234436035, max_val=5.181021213531494)
               )
               (1): BatchNorm2d(
                 384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.5079808235168457, max_val=1.747567892074585)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=1.747567892074585)
               )
             )
             (1): Identity()
@@ -441,14 +442,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-0.5691229104995728, max_val=0.7461109757423401)
               )
               (1): BatchNorm2d(
                 384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-2.2114346027374268, max_val=6.248529434204102)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=6.248529434204102)
               )
             )
             (4): Identity()
@@ -456,11 +457,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.4021196365356445, max_val=3.842712879180908)
               )
               (1): BatchNorm2d(
                 96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.1473934650421143, max_val=4.077847480773926)
               )
             )
             (7): Identity()
@@ -471,14 +472,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.078810691833496, max_val=3.4187240600585938)
               )
               (1): BatchNorm2d(
                 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-2.187441349029541, max_val=1.920577049255371)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=1.920577049255371)
               )
             )
             (1): Identity()
@@ -486,14 +487,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-0.43051210045814514, max_val=0.6599794626235962)
               )
               (1): BatchNorm2d(
                 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.7639026641845703, max_val=3.706868886947632)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=3.706868886947632)
               )
             )
             (4): Identity()
@@ -501,11 +502,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.4658044576644897, max_val=1.7362470626831055)
               )
               (1): BatchNorm2d(
                 96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-2.853470802307129, max_val=3.3343868255615234)
               )
             )
             (7): Identity()
@@ -516,14 +517,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.501476764678955, max_val=4.010122299194336)
               )
               (1): BatchNorm2d(
                 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.9348262548446655, max_val=2.0372490882873535)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.0372490882873535)
               )
             )
             (1): Identity()
@@ -531,14 +532,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-0.6025660634040833, max_val=0.7181382775306702)
               )
               (1): BatchNorm2d(
                 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-3.4188079833984375, max_val=9.938426971435547)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=9.938426971435547)
               )
             )
             (4): Identity()
@@ -546,11 +547,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-4.521465301513672, max_val=5.396613121032715)
               )
               (1): BatchNorm2d(
                 96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-15.486614227294922, max_val=14.987652778625488)
               )
             )
             (7): Identity()
@@ -561,14 +562,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-7.040304660797119, max_val=15.947937965393066)
               )
               (1): BatchNorm2d(
                 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-2.2773308753967285, max_val=6.156492710113525)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=6.156492710113525)
               )
             )
             (1): Identity()
@@ -576,14 +577,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-0.7346898317337036, max_val=1.5901927947998047)
               )
               (1): BatchNorm2d(
                 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-4.617239475250244, max_val=15.534710884094238)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=15.534710884094238)
               )
             )
             (4): Identity()
@@ -591,11 +592,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 576, 160, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-25.035184860229492, max_val=19.289560317993164)
               )
               (1): BatchNorm2d(
                 160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-15.307561874389648, max_val=13.368462562561035)
               )
             )
             (7): Identity()
@@ -606,14 +607,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-15.59981918334961, max_val=12.92814826965332)
               )
               (1): BatchNorm2d(
                 960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-9.178257942199707, max_val=5.584179878234863)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=5.584179878234863)
               )
             )
             (1): Identity()
@@ -621,14 +622,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.4820655584335327, max_val=1.5883153676986694)
               )
               (1): BatchNorm2d(
                 960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-8.198912620544434, max_val=7.379472732543945)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=7.379472732543945)
               )
             )
             (4): Identity()
@@ -636,11 +637,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-4.685511112213135, max_val=4.179708480834961)
               )
               (1): BatchNorm2d(
                 160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-7.007369518280029, max_val=6.1821770668029785)
               )
             )
             (7): Identity()
@@ -651,14 +652,14 @@ DataParallel(
             (0): ConvBnReLU2d(
               (0): Conv2d(
                 160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-21.747127532958984, max_val=15.59758472442627)
               )
               (1): BatchNorm2d(
                 960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-5.425482749938965, max_val=6.374253749847412)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=6.374253749847412)
               )
             )
             (1): Identity()
@@ -666,14 +667,14 @@ DataParallel(
             (3): ConvBnReLU2d(
               (0): Conv2d(
                 960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-1.0549453496932983, max_val=2.063847780227661)
               )
               (1): BatchNorm2d(
                 960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-6.415866851806641, max_val=16.02733612060547)
               )
               (2): ReLU(
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=0.0, max_val=16.02733612060547)
               )
             )
             (4): Identity()
@@ -681,11 +682,11 @@ DataParallel(
             (6): ConvBn2d(
               (0): Conv2d(
                 960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-10.005192756652832, max_val=9.711676597595215)
               )
               (1): BatchNorm2d(
                 160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-                (activation_post_process): HistogramObserver()
+                (activation_post_process): MinMaxObserver(min_val=-23.75993537902832, max_val=19.155364990234375)
               )
             )
             (7): Identity()
@@ -693,22 +694,22 @@ DataParallel(
         )
       )
     )
-    (quant): Quantize(scale=tensor([1.]), zero_point=tensor([0]), dtype=torch.quint8)
+    (quant): Quantize(scale=tensor([2.0079]), zero_point=tensor([0]), dtype=torch.quint8)
     (dequant): DeQuantize()
-    (skip_add): QFunctional(scale=1.0, zero_point=0)
+    (skip_add): QFunctional(scale=0.4650377929210663, zero_point=71)
     (s1): Sequential(
       (0): Sequential(
         (0): ConvBnReLU2d(
           (0): Conv2d(
             3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False
-            (activation_post_process): HistogramObserver()
+            (activation_post_process): MinMaxObserver(min_val=-694.3411254882812, max_val=765.30712890625)
           )
           (1): BatchNorm2d(
             32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-            (activation_post_process): HistogramObserver()
+            (activation_post_process): MinMaxObserver(min_val=-4.2157487869262695, max_val=4.755300998687744)
           )
           (2): ReLU(
-            (activation_post_process): HistogramObserver()
+            (activation_post_process): MinMaxObserver(min_val=0.0, max_val=4.755300998687744)
           )
         )
         (1): Identity()
@@ -719,14 +720,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=32, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-4.808586597442627, max_val=4.792212009429932)
             )
             (1): BatchNorm2d(
               32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-14.7689208984375, max_val=20.839181900024414)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=20.839181900024414)
             )
           )
           (1): Identity()
@@ -734,11 +735,11 @@ DataParallel(
           (3): ConvBn2d(
             (0): Conv2d(
               32, 16, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-19.256649017333984, max_val=21.892061233520508)
             )
             (1): BatchNorm2d(
               16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-7.484631538391113, max_val=8.60972785949707)
             )
           )
           (4): Identity()
@@ -749,14 +750,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               16, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-74.95523834228516, max_val=4.2478227615356445)
             )
             (1): BatchNorm2d(
               96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-25.349746704101562, max_val=18.846330642700195)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=18.846330642700195)
             )
           )
           (1): Identity()
@@ -764,14 +765,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               96, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=96, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-6.784666538238525, max_val=7.328728199005127)
             )
             (1): BatchNorm2d(
               96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-10.428705215454102, max_val=9.83703899383545)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=9.83703899383545)
             )
           )
           (4): Identity()
@@ -779,11 +780,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               96, 24, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-6.78213357925415, max_val=5.640778541564941)
             )
             (1): BatchNorm2d(
               24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-8.99451732635498, max_val=8.044456481933594)
             )
           )
           (7): Identity()
@@ -791,13 +792,13 @@ DataParallel(
       )
       (3): InvertedResidual(
         (conv): Sequential(
-          (0): QuantizedConv2d(24, 144, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0, bias=False)
+          (0): QuantizedConv2d(24, 144, kernel_size=(1, 1), stride=(1, 1), scale=0.11670423299074173, zero_point=69, bias=False)
           (1): QuantizedBatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
           (2): QuantizedReLU()
-          (3): QuantizedConv2d(144, 144, kernel_size=(3, 3), stride=(1, 1), scale=1.0, zero_point=0, padding=(1, 1), groups=144, bias=False)
+          (3): QuantizedConv2d(144, 144, kernel_size=(3, 3), stride=(1, 1), scale=0.024629225954413414, zero_point=72, padding=(1, 1), groups=144, bias=False)
           (4): QuantizedBatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
           (5): QuantizedReLU()
-          (6): QuantizedConv2d(144, 24, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0, bias=False)
+          (6): QuantizedConv2d(144, 24, kernel_size=(1, 1), stride=(1, 1), scale=0.06841567903757095, zero_point=67, bias=False)
           (7): QuantizedBatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
       )
@@ -808,14 +809,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               24, 144, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-12.219780921936035, max_val=10.592093467712402)
             )
             (1): BatchNorm2d(
               144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-5.569557189941406, max_val=5.011620998382568)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=5.011620998382568)
             )
           )
           (1): Identity()
@@ -823,14 +824,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               144, 144, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=144, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-2.3096377849578857, max_val=2.653795003890991)
             )
             (1): BatchNorm2d(
               144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-6.5812273025512695, max_val=5.349667072296143)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=5.349667072296143)
             )
           )
           (4): Identity()
@@ -838,11 +839,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               144, 32, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-5.146231174468994, max_val=5.3432936668396)
             )
             (1): BatchNorm2d(
               32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-5.073215961456299, max_val=5.208954811096191)
             )
           )
           (7): Identity()
@@ -853,14 +854,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.9989371299743652, max_val=3.9233131408691406)
             )
             (1): BatchNorm2d(
               192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.7510486841201782, max_val=1.9535523653030396)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=1.9535523653030396)
             )
           )
           (1): Identity()
@@ -868,14 +869,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-0.7253670692443848, max_val=0.8016570806503296)
             )
             (1): BatchNorm2d(
               192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.5955469608306885, max_val=2.77970027923584)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.77970027923584)
             )
           )
           (4): Identity()
@@ -883,11 +884,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-2.0767107009887695, max_val=2.3796112537384033)
             )
             (1): BatchNorm2d(
               32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.9818387031555176, max_val=4.432605743408203)
             )
           )
           (7): Identity()
@@ -898,14 +899,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-4.574678421020508, max_val=5.0914483070373535)
             )
             (1): BatchNorm2d(
               192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.8655264377593994, max_val=2.2238054275512695)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.2238054275512695)
             )
           )
           (1): Identity()
@@ -913,14 +914,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-0.6592678427696228, max_val=0.647018313407898)
             )
             (1): BatchNorm2d(
               192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.4636456966400146, max_val=2.844683885574341)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.844683885574341)
             )
           )
           (4): Identity()
@@ -928,11 +929,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.620261788368225, max_val=1.521719217300415)
             )
             (1): BatchNorm2d(
               32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-4.609888553619385, max_val=4.022383213043213)
             )
           )
           (7): Identity()
@@ -945,14 +946,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-7.502275466918945, max_val=7.96036958694458)
             )
             (1): BatchNorm2d(
               192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.7448551654815674, max_val=3.6855552196502686)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=3.6855552196502686)
             )
           )
           (1): Identity()
@@ -960,14 +961,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               192, 192, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=192, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.3645087480545044, max_val=1.879869818687439)
             )
             (1): BatchNorm2d(
               192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-2.908940553665161, max_val=4.036485195159912)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=4.036485195159912)
             )
           )
           (4): Identity()
@@ -975,11 +976,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               192, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-4.1309051513671875, max_val=3.705691337585449)
             )
             (1): BatchNorm2d(
               64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-4.047660827636719, max_val=5.508955955505371)
             )
           )
           (7): Identity()
@@ -990,14 +991,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-4.131062984466553, max_val=3.884453773498535)
             )
             (1): BatchNorm2d(
               384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.827758550643921, max_val=1.8478769063949585)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=1.8478769063949585)
             )
           )
           (1): Identity()
@@ -1005,14 +1006,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-0.6122941374778748, max_val=0.45570996403694153)
             )
             (1): BatchNorm2d(
               384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.113598346710205, max_val=2.2739017009735107)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.2739017009735107)
             )
           )
           (4): Identity()
@@ -1020,11 +1021,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.8687331676483154, max_val=1.4402614831924438)
             )
             (1): BatchNorm2d(
               64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.3221166133880615, max_val=2.748002052307129)
             )
           )
           (7): Identity()
@@ -1035,14 +1036,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.5098676681518555, max_val=2.741792678833008)
             )
             (1): BatchNorm2d(
               384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.512744665145874, max_val=1.2992780208587646)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=1.2992780208587646)
             )
           )
           (1): Identity()
@@ -1050,14 +1051,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-0.3858180344104767, max_val=0.3598119616508484)
             )
             (1): BatchNorm2d(
               384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-2.3812263011932373, max_val=2.1794652938842773)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.1794652938842773)
             )
           )
           (4): Identity()
@@ -1065,11 +1066,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-0.9137439727783203, max_val=1.0352885723114014)
             )
             (1): BatchNorm2d(
               64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.046076774597168, max_val=2.9412548542022705)
             )
           )
           (7): Identity()
@@ -1080,14 +1081,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.6375274658203125, max_val=4.371129035949707)
             )
             (1): BatchNorm2d(
               384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.5107558965682983, max_val=1.7121473550796509)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=1.7121473550796509)
             )
           )
           (1): Identity()
@@ -1095,14 +1096,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-0.687937319278717, max_val=0.6003643274307251)
             )
             (1): BatchNorm2d(
               384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.2446489334106445, max_val=2.6299076080322266)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.6299076080322266)
             )
           )
           (4): Identity()
@@ -1110,11 +1111,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.3070003986358643, max_val=1.119505524635315)
             )
             (1): BatchNorm2d(
               64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-2.841456413269043, max_val=3.468533992767334)
             )
           )
           (7): Identity()
@@ -1125,14 +1126,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-4.216851234436035, max_val=5.181021213531494)
             )
             (1): BatchNorm2d(
               384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.5079808235168457, max_val=1.747567892074585)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=1.747567892074585)
             )
           )
           (1): Identity()
@@ -1140,14 +1141,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-0.5691229104995728, max_val=0.7461109757423401)
             )
             (1): BatchNorm2d(
               384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-2.2114346027374268, max_val=6.248529434204102)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=6.248529434204102)
             )
           )
           (4): Identity()
@@ -1155,11 +1156,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.4021196365356445, max_val=3.842712879180908)
             )
             (1): BatchNorm2d(
               96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.1473934650421143, max_val=4.077847480773926)
             )
           )
           (7): Identity()
@@ -1170,14 +1171,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.078810691833496, max_val=3.4187240600585938)
             )
             (1): BatchNorm2d(
               576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-2.187441349029541, max_val=1.920577049255371)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=1.920577049255371)
             )
           )
           (1): Identity()
@@ -1185,14 +1186,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-0.43051210045814514, max_val=0.6599794626235962)
             )
             (1): BatchNorm2d(
               576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.7639026641845703, max_val=3.706868886947632)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=3.706868886947632)
             )
           )
           (4): Identity()
@@ -1200,11 +1201,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.4658044576644897, max_val=1.7362470626831055)
             )
             (1): BatchNorm2d(
               96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-2.853470802307129, max_val=3.3343868255615234)
             )
           )
           (7): Identity()
@@ -1215,14 +1216,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.501476764678955, max_val=4.010122299194336)
             )
             (1): BatchNorm2d(
               576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.9348262548446655, max_val=2.0372490882873535)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=2.0372490882873535)
             )
           )
           (1): Identity()
@@ -1230,14 +1231,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-0.6025660634040833, max_val=0.7181382775306702)
             )
             (1): BatchNorm2d(
               576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-3.4188079833984375, max_val=9.938426971435547)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=9.938426971435547)
             )
           )
           (4): Identity()
@@ -1245,11 +1246,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-4.521465301513672, max_val=5.396613121032715)
             )
             (1): BatchNorm2d(
               96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-15.486614227294922, max_val=14.987652778625488)
             )
           )
           (7): Identity()
@@ -1262,14 +1263,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-7.040304660797119, max_val=15.947937965393066)
             )
             (1): BatchNorm2d(
               576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-2.2773308753967285, max_val=6.156492710113525)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=6.156492710113525)
             )
           )
           (1): Identity()
@@ -1277,14 +1278,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-0.7346898317337036, max_val=1.5901927947998047)
             )
             (1): BatchNorm2d(
               576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-4.617239475250244, max_val=15.534710884094238)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=15.534710884094238)
             )
           )
           (4): Identity()
@@ -1292,11 +1293,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               576, 160, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-25.035184860229492, max_val=19.289560317993164)
             )
             (1): BatchNorm2d(
               160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-15.307561874389648, max_val=13.368462562561035)
             )
           )
           (7): Identity()
@@ -1307,14 +1308,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-15.59981918334961, max_val=12.92814826965332)
             )
             (1): BatchNorm2d(
               960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-9.178257942199707, max_val=5.584179878234863)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=5.584179878234863)
             )
           )
           (1): Identity()
@@ -1322,14 +1323,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.4820655584335327, max_val=1.5883153676986694)
             )
             (1): BatchNorm2d(
               960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-8.198912620544434, max_val=7.379472732543945)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=7.379472732543945)
             )
           )
           (4): Identity()
@@ -1337,11 +1338,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-4.685511112213135, max_val=4.179708480834961)
             )
             (1): BatchNorm2d(
               160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-7.007369518280029, max_val=6.1821770668029785)
             )
           )
           (7): Identity()
@@ -1352,14 +1353,14 @@ DataParallel(
           (0): ConvBnReLU2d(
             (0): Conv2d(
               160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-21.747127532958984, max_val=15.59758472442627)
             )
             (1): BatchNorm2d(
               960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-5.425482749938965, max_val=6.374253749847412)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=6.374253749847412)
             )
           )
           (1): Identity()
@@ -1367,14 +1368,14 @@ DataParallel(
           (3): ConvBnReLU2d(
             (0): Conv2d(
               960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-1.0549453496932983, max_val=2.063847780227661)
             )
             (1): BatchNorm2d(
               960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-6.415866851806641, max_val=16.02733612060547)
             )
             (2): ReLU(
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=0.0, max_val=16.02733612060547)
             )
           )
           (4): Identity()
@@ -1382,11 +1383,11 @@ DataParallel(
           (6): ConvBn2d(
             (0): Conv2d(
               960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-10.005192756652832, max_val=9.711676597595215)
             )
             (1): BatchNorm2d(
               160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-              (activation_post_process): HistogramObserver()
+              (activation_post_process): MinMaxObserver(min_val=-23.75993537902832, max_val=19.155364990234375)
             )
           )
           (7): Identity()
@@ -1396,14 +1397,14 @@ DataParallel(
     (conv1): ConvBnReLU2d(
       (0): Conv2d(
         256, 128, kernel_size=(1, 1), stride=(1, 1)
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-89.10985565185547, max_val=70.64209747314453)
       )
       (1): BatchNorm2d(
         128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-23.806325912475586, max_val=24.51211166381836)
       )
       (2): ReLU(
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=0.0, max_val=24.51211166381836)
       )
     )
     (bn1): Identity()
@@ -1411,14 +1412,14 @@ DataParallel(
     (conv2): ConvBnReLU2d(
       (0): Conv2d(
         128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-45.9923210144043, max_val=38.05427551269531)
       )
       (1): BatchNorm2d(
         128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-10.860612869262695, max_val=8.986666679382324)
       )
       (2): ReLU(
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=0.0, max_val=8.986666679382324)
       )
     )
     (bn2): Identity()
@@ -1426,14 +1427,14 @@ DataParallel(
     (conv3): ConvBnReLU2d(
       (0): Conv2d(
         160, 64, kernel_size=(1, 1), stride=(1, 1)
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-14.370089530944824, max_val=16.666889190673828)
       )
       (1): BatchNorm2d(
         64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-9.926671028137207, max_val=6.603242874145508)
       )
       (2): ReLU(
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=0.0, max_val=6.603242874145508)
       )
     )
     (bn3): Identity()
@@ -1441,14 +1442,14 @@ DataParallel(
     (conv4): ConvBnReLU2d(
       (0): Conv2d(
         64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-21.12385368347168, max_val=34.06775665283203)
       )
       (1): BatchNorm2d(
         64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-5.699647903442383, max_val=7.869852066040039)
       )
       (2): ReLU(
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=0.0, max_val=7.869852066040039)
       )
     )
     (bn4): Identity()
@@ -1456,14 +1457,14 @@ DataParallel(
     (conv5): ConvBnReLU2d(
       (0): Conv2d(
         88, 64, kernel_size=(1, 1), stride=(1, 1)
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-8.543604850769043, max_val=13.887792587280273)
       )
       (1): BatchNorm2d(
         64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-9.964756965637207, max_val=6.881294250488281)
       )
       (2): ReLU(
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=0.0, max_val=6.881294250488281)
       )
     )
     (bn5): Identity()
@@ -1471,14 +1472,14 @@ DataParallel(
     (conv6): ConvBnReLU2d(
       (0): Conv2d(
         64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-47.0622673034668, max_val=90.55439758300781)
       )
       (1): BatchNorm2d(
         32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-6.314035892486572, max_val=8.7147855758667)
       )
       (2): ReLU(
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=0.0, max_val=8.7147855758667)
       )
     )
     (bn6): Identity()
@@ -1486,23 +1487,23 @@ DataParallel(
     (conv7): ConvBnReLU2d(
       (0): Conv2d(
         32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-27.389938354492188, max_val=16.05580711364746)
       )
       (1): BatchNorm2d(
         32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=-21.975942611694336, max_val=32.8516960144043)
       )
       (2): ReLU(
-        (activation_post_process): HistogramObserver()
+        (activation_post_process): MinMaxObserver(min_val=0.0, max_val=32.8516960144043)
       )
     )
     (bn7): Identity()
     (relu7): Identity()
-    (conv8): QuantizedConv2d(32, 1, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0)
+    (conv8): QuantizedConv2d(32, 1, kernel_size=(1, 1), stride=(1, 1), scale=1.4416948556900024, zero_point=114)
     (sigmoid1): Sigmoid()
-    (conv9): QuantizedConv2d(32, 4, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0)
+    (conv9): QuantizedConv2d(32, 4, kernel_size=(1, 1), stride=(1, 1), scale=0.05702384188771248, zero_point=93)
     (sigmoid2): Sigmoid()
-    (conv10): QuantizedConv2d(32, 1, kernel_size=(1, 1), stride=(1, 1), scale=1.0, zero_point=0)
+    (conv10): QuantizedConv2d(32, 1, kernel_size=(1, 1), stride=(1, 1), scale=0.02177024632692337, zero_point=68)
     (sigmoid3): Sigmoid()
     (unpool1): Upsample(scale_factor=2.0, mode=bilinear)
     (unpool2): Upsample(scale_factor=2.0, mode=bilinear)
