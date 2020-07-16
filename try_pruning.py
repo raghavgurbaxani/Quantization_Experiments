@@ -140,15 +140,15 @@ def main():
     # prune 40% of connections in all 2D-conv layers
         if isinstance(module, torch.nn.Conv2d):
             prune.l1_unstructured(module, name='weight', amount=0.4)
-            #prune.l1_unstructured(module, name='bias', amount=0.3)
+            prune.l1_unstructured(module, name='bias', amount=0.3)
             prune.remove(module, 'weight')
-            #prune.remove(module, 'bias')
+            prune.remove(module, 'bias')
     # prune 40% of connections in all linear layers
         elif isinstance(module, torch.nn.Linear):
             prune.l1_unstructured(module, name='weight', amount=0.4)
-            #prune.l1_unstructured(module, name='bias', amount=0.4)
+            prune.l1_unstructured(module, name='bias', amount=0.4)
             prune.remove(module, 'weight')
-            #prune.remove(module, 'bias')
+            prune.remove(module, 'bias')
     model=model.to_sparse()
     #print(dict(model.named_buffers()).keys())
     print_size_of_model(model)
