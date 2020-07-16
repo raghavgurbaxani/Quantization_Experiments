@@ -133,8 +133,8 @@ def main():
     print_size_of_model(model)
     
     ###############
-    
-    print('Try pruning')
+    print()
+    print('Pruned model size')
     import torch.nn.utils.prune as prune
     for name, module in model.named_modules():
     # prune 40% of connections in all 2D-conv layers
@@ -149,6 +149,7 @@ def main():
             #prune.l1_unstructured(module, name='bias', amount=0.4)
             prune.remove(module, 'weight')
             #prune.remove(module, 'bias')
+    model=model.to_sparse()
     #print(dict(model.named_buffers()).keys())
     print_size_of_model(model)
    
